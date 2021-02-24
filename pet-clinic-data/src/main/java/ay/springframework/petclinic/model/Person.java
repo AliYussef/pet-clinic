@@ -1,6 +1,9 @@
 package ay.springframework.petclinic.model;
 
-public class Person {
+/**
+ * @author aliyussef
+ */
+public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
 
