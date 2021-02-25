@@ -4,6 +4,7 @@ import java.util.Set;
 
 /**
  * Created by aliyussef on 25/02/2021
+ * Common(generic) crud service for other services interfaces.
  */
 public interface CrudService<T, ID> {
 
