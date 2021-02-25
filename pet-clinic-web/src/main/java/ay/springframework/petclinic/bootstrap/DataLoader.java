@@ -1,12 +1,9 @@
 package ay.springframework.petclinic.bootstrap;
 
 import ay.springframework.petclinic.model.Owner;
-import ay.springframework.petclinic.model.Pet;
 import ay.springframework.petclinic.model.Vet;
 import ay.springframework.petclinic.services.OwnerService;
 import ay.springframework.petclinic.services.VetService;
-import ay.springframework.petclinic.services.map.OwnerServiceMap;
-import ay.springframework.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,21 +16,23 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
         Owner owner1 = new Owner();
+        owner1.setId(1L);
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
+        owner2.setId(2L);
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
 
