@@ -2,12 +2,14 @@ package ay.springframework.petclinic.services.map;
 
 import ay.springframework.petclinic.model.PetType;
 import ay.springframework.petclinic.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by aliyussef on 04/03/2021
  */
+@Service
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
