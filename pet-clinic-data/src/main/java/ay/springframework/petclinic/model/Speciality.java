@@ -1,10 +1,17 @@
 package ay.springframework.petclinic.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by aliyussef on 04/03/2021
  */
+@Entity
+@Table(name = "specialities")
 public class Speciality extends BaseEntity {
 
+    @Column(name = "description")
     private String description;
 
     public String getDescription() {
